@@ -31,12 +31,6 @@ def main(args):
     trainer = instantiate_from_config(trainer_config)
     evaluator = instantiate_from_config(config.evaluator)
 
-    # TODO Replace with instantiate from config
-    # if args.lr_scheduler == 'plateau':
-    #     scheduler = ReduceLROnPlateau(trainer.opt, patience=50)
-    # elif args.lr_scheduler == 'none':
-    #     scheduler = None
-
     print('*'*70)
     logger.info(f'Logging general information')
     logger.info(f'Debugging mode: {args.debug}')
