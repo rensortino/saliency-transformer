@@ -1,6 +1,5 @@
 from tqdm import tqdm
 import torch.nn.functional as F
-from models.m_classifier import Classifier
 from trainers.t_base import BaseTrainer
 from torch.optim import Adam
 
@@ -21,7 +20,6 @@ class ClsTrainer(BaseTrainer):
         '''
         super().__init__(resume)
         device = kwargs.pop('device', 'cuda')
-        # self.model = Classifier(1, 28, 28, 10).to(device)
         model = kwargs.pop('model', None)
         scheduler = kwargs.pop('scheduler', None)
         self.model = instantiate_from_config(model).to(device)
